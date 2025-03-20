@@ -7,6 +7,7 @@
     <title>ReadMe LLM</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/workflow.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 
@@ -29,6 +30,7 @@
                 <li><a href="#developer">Developer</a></li> -->
                 <li><a href="#contact">Contact</a></li>
                 <!-- <li><a href="">Discussion</a></li> -->
+                <li><a href="#workflow">Workflow</a></li>
             </ul>
         </div>
     </nav>
@@ -353,6 +355,42 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>readmellm.ucb@gmail.com</p>
+        </section>
+        <section id="workflow">
+            <h2>Workflow</h2>
+            <p>Follow the steps in the screen shot below to generate high quality code with the help of ReadMe.LLM! </p>
+            <img src="assets/images/github_to_gpt.png" alt="User Chart" class="center large-image">
+            <img src="assets/images/gpt_to_code.png" alt="User Chart" class="center large-image">
+
+            <p>Here is an example task using the Supervision Library, feel free to try it <b>with and without ReadMe.LLM</b>! See what happens</p>
+            <p><b>Task:</b></p>
+            <div class="code-container">
+                <button class="copy-button" onclick="copyCode()">Copy</button>
+                <div id="codeBlock">
+                    <p>Using the Supervision Library, find all the cars in the picture and annotate them with a percentage bar 
+                    displaying the confidence that the annotated item is a car. 
+                    Save the bounding boxes of the cars, and use the coordinates to crop the image to the respective cars. 
+                    Show the annotated picture and print out the cropped images of each car.
+                    </p>
+              <!-- &lt;div&gt;Hello, World!&lt;/div&gt;
+              &lt;p&gt;This is a sample code block.&lt;/p&gt; -->
+                </div>
+            </div>
+            <p><b>ReadMe.LLM:</b></p>
+            <div class="code-container">
+                <button class="copy-button" onclick="copyCode()">Copy</button>
+                <div id="readme-content"></div>
+            </div>
+            <a href="assets/images/original_image.jpeg" download="original_image.jpeg" class="download-btn">
+                <button>Download Original Image</button>
+            </a>
+            <a href="assets/images/oski_image.png" download="oski_image.png" class="download-btn">
+                <button>Download Annotated Image</button>
+            </a>
+            <p>Here is the expected output is the code is correct</p>
+            <img src="assets/images/blur.jpeg" alt="User Chart" class="center">
+            <img src="assets/images/oski_people.jpeg" alt="User Chart" class="center">
+            
         </section>
     </main>
 
