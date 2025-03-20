@@ -130,3 +130,79 @@ h3 {
     margin-right: auto;
     width: 50%;
   }
+
+/* Team Section Styles */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-member {
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+/* Target the 6th team member specifically */
+.team-member:nth-child(6) {
+    grid-column: 3; /* Center in the grid (column 3 of 5) */
+    grid-row: 2; /* Place in the second row */
+}
+
+.team-member img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.member-info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.member-title {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 8px;
+    color: #333;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .team-container {
+        gap: 20px;
+    }
+    
+    .team-member {
+        width: 100%;
+        max-width: 320px;
+    }
+}
