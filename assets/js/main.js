@@ -17,5 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
             item.classList.add('active');
         }
     });
+
+    fetch('assets/text/readme-example.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('readme-content').innerText = data;
+        })
+        .catch(error => console.error('Error loading text:', error));
+    
 });
 
+function copyCode() {
+    const codeBlock = document.getElementById('codeBlock').innerText;
+
+    navigator.clipboard.writeText(codeBlock)
+      .then(() => alert('Code copied to clipboard!'))
+      .catch(err => alert('Failed to copy code: ' + err));
+}
