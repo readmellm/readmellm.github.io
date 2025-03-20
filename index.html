@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
+
 <body>
     <header class="hero">
         <h1>ReadMe LLM</h1>
@@ -18,10 +20,13 @@
         <div class="nav-container">
             <!-- <a href="index.html" class="nav-logo">ReadMe LLM</a> -->
             <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-<!--                 <li><a href="#library">Library Maker</a></li>
+                <li><a href="#solution">ReadMe.LLM</a></li>
+                <li><a
+                        href="https://docs.google.com/document/d/14gC1LOyP63WjCu_2aQLGns0_pIveCl24LfAfc8tymPA/edit?tab=t.0#heading=h.81n4a8x05dl1">Blog</a>
+                </li>
+                <li><a href="#team">Team</a></li>
+                <!--                 <li><a href="#library">Library Maker</a></li>
                 <li><a href="#developer">Developer</a></li> -->
-                <li><a href="https://docs.google.com/document/d/14gC1LOyP63WjCu_2aQLGns0_pIveCl24LfAfc8tymPA/edit?tab=t.0#heading=h.81n4a8x05dl1">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <!-- <li><a href="">Discussion</a></li> -->
             </ul>
@@ -29,34 +34,321 @@
     </nav>
 
     <main>
-        <section id="about">
-            <h2>About</h2>
-            <img src="assets/images/flowchart.png" alt="ReadMe LLM framework" class="center">
-            <p>ReadMe.LLM is a novel framework designed to enhance code generation tasks performed by  Large Language Models (LLMs) by providing essential information about a software library. 
-                Without ReadMe.LLM, models achieved a performance of only ~20%. However, when equipped with ReadMe.LLM, performance consistently increased to near-perfect accuracy with one case 
-                study demonstrating 100% performance across all tested models. Inspired by developer-oriented ReadMe.md files, ReadMe.LLM serves as the crucial companion file a software library 
-                needs for it to be best utilized by a given model.</p>
-            <p><b>Library Maker workflow:</b></p>
-            <img src="assets/images/workflow1.png" alt="User Chart" class="center">
-            <p><b>Developer workflow:</b></p>
-            <img src="assets/images/workflow2.png" alt="User Chart" class="center">
-            <p>ReadMe.llm can bring immense value to both library makers and developers as outline in the chart below:</p>
-            <img src="assets/images/userChart.png" alt="User Chart" class="center">
+        <section id="problem">
+            <h2>Bridging the LLM Knowledge Gap</h2>
+            <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center">
+            <div class="problem-statement">
+                <h3>The Challenge</h3>
+                <p>Many developers use LLMs to generate code with existing software libraries, leveraging these tools to
+                    speed up development or simplify onboarding.
+                    However, not all libraries are equally represented in LLM training data. Newer or smaller libraries
+                    often lack online documentation, making it difficult for LLMs to generate accurate code leading to
+                    often misused or misrepresented in AI-generated code.
+                    In contrast, well-established libraries like Pandas have extensive resources that help models
+                    produce reliable output.</p>
+
+            </div>
+
+            <!-- New Case Studies Section -->
+            <div class="case-studies">
+                <h3>Real-World Examples: When LLMs Fail</h3>
+                <p>We initially conducted experiments without any context across multiple LLMs: GPT-4o, Sonar Huge (Llama3 70B), Claude 3.5 and 3.7 Sonnet, Grok-2, and Deepseek R1. We test two distinct libraries: DigitalRF and Supervision. DigitalRF, an academic library with limited documentation tests LLMs ability to handle libraries they are unlikely to have seen during training. Supervision, a modern, industry-run library, helps assess whether similar limitations persist for newer but more widely used libraries. 
+                    </p>
+                <!-- Case Study 1 -->
+                <div class="case-study">
+                    <h4>Case Study 1: DigitalRF</h4>
+                    <div class="case-details">
+                        <div class="case-description">
+                            <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p>
+                        </div>
+                        <div class="case-outcome">
+                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-study">
+                    <h4>Case Study 2: Supervision Library</h4>
+                    <div class="case-details">
+                        <div class="case-description">
+                            <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p>
+                        </div>
+                        <div class="case-outcome">
+                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- End of Case Studies Section -->
+
+            <div class="impact">
+                <h3>Who Suffers?</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Engineers</h4>
+                        <ul>
+                            <li>Receive incorrect or non-functional code</li>
+                            <li>Experience frustration and prolonged debugging</li>
+                            <li>Increase company resource expenditure</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>Library Developers</h4>
+                        <ul>
+                            <li>Risk losing potential users</li>
+                            <li>See developers abandon their tools</li>
+                            <li>Compete against alternatives that work seamlessly with LLMs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ecosystem-impact">
+                <h3>Ecosystem Consequences</h3>
+                <p>This dynamic is reshaping the software ecosystem—smaller libraries risk obsolescence not due to their
+                    technical merit but because LLMs fail to represent them accurately. For developers, this means fewer
+                    viable options and slower innovation.</p>
+            </div>
+
+            <!-- <p>Many developers use LLMs to generate code with existing software libraries, leveraging these tools to speed up development or simplify onboarding. However, not all libraries are equally represented in LLM training data.  Newer or smaller libraries often lack online documentation, making it difficult for LLMs to generate accurate code. In contrast, well-established libraries like Pandas have extensive resources that help models produce reliable output, while lesser-known libraries are often misused or misrepresented in AI-generated code.
+                This gap negatively impacts both engineers and library developers. Engineers receive incorrect or non-functional code, leading to frustration, prolonged debugging, and increased company resource expenditure. Meanwhile, library developers risk losing potential users as developers abandon their tools in favor of alternatives that work seamlessly with LLM-generated code. 
+                This dynamic is reshaping the software ecosystem—smaller libraries risk obsolescence not due to their technical merit but because LLMs fail to represent them accurately. For developers, this means fewer viable options and slower innovation. Our solution is a framework that ensures LLMs can correctly understand and utilize any software library, leveling the playing field and fostering a more diverse, innovative, and accessible development landscape.
+                </p> -->
         </section>
 
-<!--         <section id="library">
+        <section id="solution">
+            <h2>ReadMe.LLM</h2>
+            <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center">
+
+            <p>We propose ReadMe.LLM, a structured framework that helps library makers make their tools more accessible
+                to LLMs:</p>
+            <ul>
+                <li>Optimized Documentation for LLMs: ReadMe.LLM provides structured descriptions of the codebase and
+                    other metadata.</li>
+                <li>Seamless Integration: Library developers attach ReadMe.LLM to their codebase, allowing LLMs to
+                    accurately utilize the library without requiring additional fine-tuning.</li>
+                <li>Enhanced Developer Experience: Developers simply copy and paste the ReadMe.LLM contents into the LLM
+                    chat window and ask their query. The LLM now having better context about the library—can select
+                    appropriate functions to correctly implement users' design.</li>
+            </ul>
+            <p>This approach shifts the focus from fixing LLMs' limitations to empowering libraries to be LLM-friendly,
+                fostering adoption of emerging libraries. The respective workflows for a Library Developer and Engineer are illustrated below:</p>
+            <p><b>Library Developer workflow:</b></p>
+            <img src="assets/images/workflow1.png" alt="User Chart" class="center">
+            <p><b>Engineer workflow:</b></p>
+            <img src="assets/images/workflow2.png" alt="User Chart" class="center">
+            <!-- New Case Studies Section -->
+            <div class="case-studies">
+                <h3>ReadMe.LLM's Success</h3>
+                <p>We repeated the experiments on DigitalRF and Supervision mentioned in the previous section, and we observed significantly better results using the ReadMe.LLM framework:</p>
+                <!-- Case Study 1 -->
+                <div class="case-study">
+                    <h4>Case Study 1: DigitalRF</h4>
+                    <div class="case-details">
+                        <div class="case-description">
+                            <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p>
+                        </div>
+                        <div class="case-outcome">
+                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-study">
+                    <h4>Case Study 2: Supervision Library</h4>
+                    <div class="case-details">
+                        <div class="case-description">
+                            <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p>
+                        </div>
+                        <div class="case-outcome">
+                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- End of Case Studies Section -->
+        </section>
+
+        <!-- Team Section -->
+        <section id="team">
+            <h2>Meet Our Team</h2>
+
+            <div class="team-container">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="assets/images/gomez.jpg" alt="Team Member 1">
+                    <div class="member-info">
+                        <h3>Alejandro Gómez Soteres</h3>
+                        <div class="member-title">Team Member</div>
+                        <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/gs-alejandro/">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="assets/images/sandya1.jpg" alt="Team Member 2">
+                    <div class="member-info">
+                        <h3>Sandya Wijaya</h3>
+                        <div class="member-title">Team Member</div>
+                        <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/sandyawijaya/">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="assets/images/shri.JPG" alt="Team Member 3">
+                    <div class="member-info">
+                        <h3>Shriyanshu Kode</h3>
+                        <div class="member-title">Team Member</div>
+                        <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/shriyanshuk/">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="assets/images/jacob_headshot.jpeg" alt="Team Member 4">
+                    <div class="member-info">
+                        <h3>Jacob Bolano</h3>
+                        <div class="member-title">Team Member</div>
+                        <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/jacobbolano/">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <img src="assets/images/yue.jpeg" alt="Team Member 5">
+                    <div class="member-info">
+                        <h3>Yue Huang</h3>
+                        <div class="member-title">Team Member</div>
+                        <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/yuehuang01/">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="team-member">
+                    <img src="assets/images/sahai.jpg" alt="Team Member 6">
+                    <div class="member-info">
+                        <h3>Anant Sahai</h3>
+                        <div class="member-title">Advisor</div>
+                        <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/anantsahai/">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--         <section id="library">
             <h2>Library Makers</h2>
             <p><b>Challenge:</b> Loss of potential users to bigger alternative libraries AI is better at coding with.</p>
             <p><b>Action:</b> Create a ReadMe.LLM.</p>
             <p></p><b>Result:</b> More adoption and thus a fairer playing field.</p>
         </section> -->
 
-<!--         <section id="developer">
+        <!--         <section id="developer">
             <h2>Developers</h2>
             <p><b>Challenge:</b> Incorrect code causes frustration and wastes time and resources for debugging.</p>
             <p><b>Action:</b> Prompt LLM with ReadMe.LLM file.</p>
             <p></p><b>Result:</b> Seamless development and thus faster innovation.</p>
         </section> -->
+
+        <section id="citation">
+            <h2>Cite</h2>
+            <div class="content-box visual" style="margin-top: 2rem; max-width: 100%">
+                <div class="text-swatch" style="width:50rem; max-width: 100%;">
+                    <p>
+                        If you rely on ReadMe.LLM and artifacts, we request that you cite to the underlying paper.
+                    </p>
+                    <!-- <div class="citation">
+
+                        <div class="bibtex-field">
+                            @misc{zhang2024cybenchframeworkevaluatingcybersecurity,
+                        </div>
+                        <div class="bibtex-entry">
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">title</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{Cybench: A Framework for Evaluating Cybersecurity
+                                    Capabilities and Risks of Language Models},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">author</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{Andy K. Zhang and Neil Perry and Riya Dulepet and Joey Ji
+                                    and Celeste Menders and Justin W. Lin and Eliot Jones and Gashon Hussein and
+                                    Samantha Liu and Donovan Jasper and Pura Peetathawatchai and Ari Glenn and Vikram
+                                    Sivashankar and Daniel Zamoshchin and Leo Glikbarg and Derek Askaryar and Mike Yang
+                                    and Teddy Zhang and Rishi Alluri and Nathan Tran and Rinnara Sangpisit and
+                                    Polycarpos Yiorkadjis and Kenny Osele and Gautham Raghupathi and Dan Boneh and
+                                    Daniel E. Ho and Percy Liang},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">year</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{2024},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">eprint</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{2408.08926},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">archivePrefix</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{arXiv},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">primaryClass</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{cs.CR},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">url</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value">{https://arxiv.org/abs/2408.08926},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-label">note</span>
+                                <span class="bibtex-equals">=</span>
+                                <span class="bibtex-value" id="bibtex-time">{Accessed: 2025-03-18},</span>
+                            </div>
+                            <div class="bibtex-field">
+                                <span class="bibtex-end">}</span>
+                            </div>
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+        </section>
 
         <section id="contact">
             <h2>Contact</h2>
@@ -70,4 +362,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
