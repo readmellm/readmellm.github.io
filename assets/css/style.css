@@ -77,7 +77,7 @@ h3 {
 .navbar {
     background-color: var(--nav-color);
     height: var(--nav-height);
-    position: relative;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -85,6 +85,7 @@ h3 {
     font-weight: bold;
     font-size: 1.2rem;
     text-align: center;
+    z-index: 1000;
 }
 
 .nav-container {

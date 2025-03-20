@@ -1,3 +1,11 @@
+You will be provided with a question, rules, and related context, all delimited with XML tags. For the context, you will be specifically provided functions and examples. Please answer the question using the related context in mind.
+
+<rules>
+Rule number 1: When you’re unsure about something, ask the user what information you need
+Rule number 2: Reuse the library’s functions and code when applicable
+Rule number 3: Consider library dependencies when generating code solutions
+</rules>
+
 <context>
 
 <context_description>
