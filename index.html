@@ -25,12 +25,12 @@
                 <li><a
                         href="https://docs.google.com/document/d/14gC1LOyP63WjCu_2aQLGns0_pIveCl24LfAfc8tymPA/edit?tab=t.0#heading=h.81n4a8x05dl1">Blog</a>
                 </li>
+                <li><a href="#workflow">Workflow</a></li>
                 <li><a href="#team">Team</a></li>
                 <!--                 <li><a href="#library">Library Maker</a></li>
                 <li><a href="#developer">Developer</a></li> -->
                 <li><a href="#contact">Contact</a></li>
                 <!-- <li><a href="">Discussion</a></li> -->
-                <li><a href="#workflow">Workflow</a></li>
             </ul>
         </div>
     </nav>
@@ -64,7 +64,8 @@
                             <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p>
                         </div>
                         <div class="case-outcome">
-                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                            <p><strong>Key Results:</strong>Without adding additional context through ReadMe.LLM, we observed poor performances across all 5 of the models ranging from just 20 to 40% success rates.</p>
+                            <img src="assets/images/DigitalRF_NoContext.png" alt="ReadMe LLM framework" class="center">
                         </div>
                     </div>
                 </div>
@@ -77,7 +78,9 @@
                             <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p>
                         </div>
                         <div class="case-outcome">
-                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                            <p><strong>Key Results:</strong> When attempting this task with no additional context, we observed that most of the models had mimal success rates ranging from just 0% to 20%. The sole exception was DeepSeek R1 which had an impressive success rate of 80%.</p>
+                            <img src="assets/images/Supervision_NoContext.png" alt="ReadMe LLM framework" class="center">
+                            
                         </div>
                     </div>
                 </div>
@@ -87,7 +90,7 @@
             <!-- End of Case Studies Section -->
 
             <div class="impact">
-                <h3>Who Suffers?</h3>
+                <h3>Who's Impacted?</h3>
                 <div class="two-column">
                     <div class="column">
                         <h4>Engineers</h4>
@@ -151,10 +154,11 @@
                     <h4>Case Study 1: DigitalRF</h4>
                     <div class="case-details">
                         <div class="case-description">
-                            <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p>
+                            <!-- <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p> -->
                         </div>
                         <div class="case-outcome">
-                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                            <p><strong>Key Results:</strong> After experimenting with several different types of ReadMe.LLM's we observed that each model had a ReadMe.LLM that resulted in a 100% success rate.</p>
+                            <img src="assets/images/Success_DigitalRF.png" alt="ReadMe LLM framework" class="center">
                         </div>
                     </div>
                 </div>
@@ -164,10 +168,11 @@
                     <h4>Case Study 2: Supervision Library</h4>
                     <div class="case-details">
                         <div class="case-description">
-                            <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p>
+                            <!-- <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p> -->
                         </div>
                         <div class="case-outcome">
-                            <p><strong>Key Results:</strong> [What this reveals about LLM limitations]</p>
+                            <p><strong>Key Results:</strong> We created an optimal ReadME.LLM for Supervision, and as can be seen in the graph below, we were able to reach 100% success rate across all 5 models for this task.</p>
+                            <img src="assets/images/Success_Supervision.png" alt="ReadMe LLM framework" class="center">
                         </div>
                     </div>
                 </div>
@@ -175,6 +180,43 @@
                 
             </div>
             <!-- End of Case Studies Section -->
+        </section>
+
+        <section id="workflow">
+            <h2>Workflow</h2>
+            <p>Follow the steps in the screen shot below to generate high quality code with the help of ReadMe.LLM! </p>
+            <img src="assets/images/github_to_gpt.png" alt="User Chart" class="center large-image">
+            <img src="assets/images/gpt_to_code.png" alt="User Chart" class="center large-image">
+
+            <p>Here is an example task using the Supervision Library, feel free to try it <b>with and without ReadMe.LLM</b>! See what happens</p>
+            <p><b>Task:</b></p>
+            <div class="code-container">
+                <button class="copy-button" onclick="copyCode()">Copy</button>
+                <div id="codeBlock">
+                    <p>Using the Supervision Library, find all the cars in the picture and annotate them with a percentage bar 
+                    displaying the confidence that the annotated item is a car. 
+                    Save the bounding boxes of the cars, and use the coordinates to crop the image to the respective cars. 
+                    Show the annotated picture and print out the cropped images of each car.
+                    </p>
+              <!-- &lt;div&gt;Hello, World!&lt;/div&gt;
+              &lt;p&gt;This is a sample code block.&lt;/p&gt; -->
+                </div>
+            </div>
+            <p><b>ReadMe.LLM:</b></p>
+            <div class="code-container">
+                <button class="copy-button" onclick="copyCode()">Copy</button>
+                <div id="readme-content"></div>
+            </div>
+            <a href="assets/images/original_image.jpeg" download="original_image.jpeg" class="download-btn">
+                <button>Download Original Image</button>
+            </a>
+            <a href="assets/images/oski_image.png" download="oski_image.png" class="download-btn">
+                <button>Download Annotated Image</button>
+            </a>
+            <p>Here is the expected output is the code is correct</p>
+            <img src="assets/images/blur.jpeg" alt="User Chart" class="center">
+            <img src="assets/images/oski_people.jpeg" alt="User Chart" class="center">
+            
         </section>
 
         <!-- Team Section -->
@@ -187,7 +229,6 @@
                     <img src="assets/images/gomez.jpg" alt="Team Member 1">
                     <div class="member-info">
                         <h3>Alejandro Gómez Soteres</h3>
-                        <div class="member-title">Team Member</div>
                         <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/gs-alejandro/">LinkedIn</a>
@@ -201,7 +242,6 @@
                     <img src="assets/images/sandya1.jpg" alt="Team Member 2">
                     <div class="member-info">
                         <h3>Sandya Wijaya</h3>
-                        <div class="member-title">Team Member</div>
                         <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/sandyawijaya/">LinkedIn</a>
@@ -215,7 +255,6 @@
                     <img src="assets/images/shri.JPG" alt="Team Member 3">
                     <div class="member-info">
                         <h3>Shriyanshu Kode</h3>
-                        <div class="member-title">Team Member</div>
                         <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/shriyanshuk/">LinkedIn</a>
@@ -229,7 +268,6 @@
                     <img src="assets/images/jacob_headshot.jpeg" alt="Team Member 4">
                     <div class="member-info">
                         <h3>Jacob Bolano</h3>
-                        <div class="member-title">Team Member</div>
                         <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/jacobbolano/">LinkedIn</a>
@@ -243,7 +281,6 @@
                     <img src="assets/images/yue.jpeg" alt="Team Member 5">
                     <div class="member-info">
                         <h3>Yue Huang</h3>
-                        <div class="member-title">Team Member</div>
                         <!-- <p class="member-bio">Short bio describing this team member's background, expertise, and contributions to the ReadMe LLM project.</p> -->
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/yuehuang01/">LinkedIn</a>
@@ -356,42 +393,7 @@
             <h2>Contact</h2>
             <p>readmellm.ucb@gmail.com</p>
         </section>
-        <section id="workflow">
-            <h2>Workflow</h2>
-            <p>Follow the steps in the screen shot below to generate high quality code with the help of ReadMe.LLM! </p>
-            <img src="assets/images/github_to_gpt.png" alt="User Chart" class="center large-image">
-            <img src="assets/images/gpt_to_code.png" alt="User Chart" class="center large-image">
-
-            <p>Here is an example task using the Supervision Library, feel free to try it <b>with and without ReadMe.LLM</b>! See what happens</p>
-            <p><b>Task:</b></p>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode()">Copy</button>
-                <div id="codeBlock">
-                    <p>Using the Supervision Library, find all the cars in the picture and annotate them with a percentage bar 
-                    displaying the confidence that the annotated item is a car. 
-                    Save the bounding boxes of the cars, and use the coordinates to crop the image to the respective cars. 
-                    Show the annotated picture and print out the cropped images of each car.
-                    </p>
-              <!-- &lt;div&gt;Hello, World!&lt;/div&gt;
-              &lt;p&gt;This is a sample code block.&lt;/p&gt; -->
-                </div>
-            </div>
-            <p><b>ReadMe.LLM:</b></p>
-            <div class="code-container">
-                <button class="copy-button" onclick="copyCode()">Copy</button>
-                <div id="readme-content"></div>
-            </div>
-            <a href="assets/images/original_image.jpeg" download="original_image.jpeg" class="download-btn">
-                <button>Download Original Image</button>
-            </a>
-            <a href="assets/images/oski_image.png" download="oski_image.png" class="download-btn">
-                <button>Download Annotated Image</button>
-            </a>
-            <p>Here is the expected output is the code is correct</p>
-            <img src="assets/images/blur.jpeg" alt="User Chart" class="center">
-            <img src="assets/images/oski_people.jpeg" alt="User Chart" class="center">
-            
-        </section>
+        
     </main>
 
     <footer>
