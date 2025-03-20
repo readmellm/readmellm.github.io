@@ -89,7 +89,7 @@ h3 {
 }
 
 .nav-container {
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -112,6 +112,8 @@ h3 {
 .nav-menu li {
     flex: 1; /* Add this */
     text-align: center; /* Add this */
+    /* background-color: #fbac18; */
+    /* border-radius: 5px; */
 }
 
 .nav-menu li a {
@@ -119,6 +121,7 @@ h3 {
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
+    
 }
 
 .center {
