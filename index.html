@@ -37,10 +37,11 @@
 
     <main>
         <section id="problem">
-            <h2>Bridging the LLM Knowledge Gap</h2>
-            <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center">
+            <h2>Too Long Dont Read</h2>
             <div class="problem-statement">
+                
                 <h3>The Challenge</h3>
+                <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center">
                 <p>Many developers use LLMs to generate code with existing software libraries, leveraging these tools to
                     speed up development or simplify onboarding.
                     However, not all libraries are equally represented in LLM training data. Newer or smaller libraries
@@ -48,8 +49,28 @@
                     often misused or misrepresented in AI-generated code.
                     In contrast, well-established libraries like Pandas have extensive resources that help models
                     produce reliable output.</p>
+                
+                <h3>Our Solution</h3>
+                        <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center">
+            
+                        <p>We propose ReadMe.LLM, a structured framework that helps library makers make their tools more accessible
+                            to LLMs:</p>
+                        <ul>
+                            <li>Optimized Documentation for LLMs: ReadMe.LLM provides structured descriptions of the codebase and
+                                other metadata.</li>
+                            <li>Seamless Integration: Library developers attach ReadMe.LLM to their codebase, allowing LLMs to
+                                accurately utilize the library without requiring additional fine-tuning.</li>
+                            <li>Enhanced Developer Experience: Developers simply copy and paste the ReadMe.LLM contents into the LLM
+                                chat window and ask their query. The LLM now having better context about the library—can select
+                                appropriate functions to correctly implement users' design.</li>
+                        </ul>
+                                
 
             </div>
+
+
+            <h2>Bridging the LLM Knowledge Gap</h2>
+            <!-- <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center"> -->
 
             <!-- New Case Studies Section -->
             <div class="case-studies">
@@ -58,7 +79,11 @@
                     </p>
                 <!-- Case Study 1 -->
                 <div class="case-study">
-                    <h4>Case Study 1: DigitalRF</h4>
+                    <h4>Case Study 1: DigitalRF
+                        <a href="https://github.com/MITHaystack/digital_rf" target="_blank" rel="noopener noreferrer">
+                            [Link]
+                        </a>
+                    </h4>
                     <div class="case-details">
                         <div class="case-description">
                             <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p>
@@ -72,7 +97,11 @@
 
                 <!-- Case Study 2 -->
                 <div class="case-study">
-                    <h4>Case Study 2: Supervision Library</h4>
+                    <h4>Case Study 2: Supervision Library
+                        <a href="https://supervision.roboflow.com/latest/" target="_blank" rel="noopener noreferrer">
+                            [Link]
+                        </a>
+                    </h4>
                     <div class="case-details">
                         <div class="case-description">
                             <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p>
@@ -113,9 +142,12 @@
 
             <div class="ecosystem-impact">
                 <h3>Ecosystem Consequences</h3>
-                <p>This dynamic is reshaping the software ecosystem—smaller libraries risk obsolescence not due to their
+                <p>This dynamic is reshaping the software ecosystem—smaller libraries risk lack-of-use not due to their
                     technical merit but because LLMs fail to represent them accurately. For developers, this means fewer
                     viable options and slower innovation.</p>
+                <!-- <p>This dynamic is reshaping the software ecosystem—smaller libraries risk obsolescence not due to their
+                    technical merit but because LLMs fail to represent them accurately. For developers, this means fewer
+                    viable options and slower innovation.</p> -->
             </div>
 
             <!-- <p>Many developers use LLMs to generate code with existing software libraries, leveraging these tools to speed up development or simplify onboarding. However, not all libraries are equally represented in LLM training data.  Newer or smaller libraries often lack online documentation, making it difficult for LLMs to generate accurate code. In contrast, well-established libraries like Pandas have extensive resources that help models produce reliable output, while lesser-known libraries are often misused or misrepresented in AI-generated code.
@@ -126,7 +158,7 @@
 
         <section id="solution">
             <h2>ReadMe.LLM</h2>
-            <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center">
+            <!-- <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center">
 
             <p>We propose ReadMe.LLM, a structured framework that helps library makers make their tools more accessible
                 to LLMs:</p>
@@ -138,8 +170,8 @@
                 <li>Enhanced Developer Experience: Developers simply copy and paste the ReadMe.LLM contents into the LLM
                     chat window and ask their query. The LLM now having better context about the library—can select
                     appropriate functions to correctly implement users' design.</li>
-            </ul>
-            <p>This approach shifts the focus from fixing LLMs' limitations to empowering libraries to be LLM-friendly,
+            </ul> -->
+            <p>Our approach shifts the focus from fixing LLMs' limitations to empowering libraries to be LLM-friendly,
                 fostering adoption of emerging libraries. The respective workflows for a Library Developer and Engineer are illustrated below:</p>
             <p><b>Library Developer workflow:</b></p>
             <img src="assets/images/workflow1.png" alt="User Chart" class="center">
