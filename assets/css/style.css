@@ -210,7 +210,6 @@ h3 {
     }
 }
 
-
 .tldr {
     display: flex;
     align-items: flex-start;
@@ -239,3 +238,18 @@ h3 {
     height: auto;
     margin-top: 0px;
   }
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
