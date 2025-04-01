@@ -40,10 +40,30 @@
     <main>
         <section id="problem">
             <h2>TL;DR</h2>
-            <div class="problem-statement">
-                
-                <h3>The Challenge</h3>
-                <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center">
+            <div class="tldr">
+                <div class="problem-statement">
+                <p>
+                    <b>Problem:</b> LLMs often struggle with newer or lesser-known libraries due to limited online 
+                    documentation or lack of respresentation in their training data. 
+                </p>
+                <p>
+                    <b>Solution:</b> ReadMe.LLM is a framework that assesses this issue by providing structured descritpioins 
+                    of the codebase and other metadata. Library developers provide ReadMe.LLM and engineers 
+                    use them by simply copy pasting its contents into their chat window along with their query.
+                </p>
+                </div>
+                <div class="compare-graph">
+                    <img src="assets/images/compare.png" alt="ReadMe LLM framework">
+                </div>
+            </div>
+        </section>
+
+        <section>
+
+            <h2>Bridging the LLM Knowledge Gap</h2>
+            <!-- <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center"> -->
+            <h3>The Challenge</h3>
+                <!-- <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center"> -->
                 <p>Many developers use LLMs to generate code with existing software libraries, leveraging these tools to
                     speed up development or simplify onboarding.
                     However, not all libraries are equally represented in LLM training data. Newer or smaller libraries
@@ -51,29 +71,6 @@
                     often misused or misrepresented in AI-generated code.
                     In contrast, well-established libraries like Pandas have extensive resources that help models
                     produce reliable output.</p>
-                
-                <h3>Our Solution</h3>
-                        <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center">
-            
-                        <p>We propose ReadMe.LLM, a structured framework that helps library makers make their tools more accessible
-                            to LLMs:</p>
-                        <ul>
-                            <li>Optimized Documentation for LLMs: ReadMe.LLM provides structured descriptions of the codebase and
-                                other metadata.</li>
-                            <li>Seamless Integration: Library developers attach ReadMe.LLM to their codebase, allowing LLMs to
-                                accurately utilize the library without requiring additional fine-tuning.</li>
-                            <li>Enhanced Developer Experience: Developers simply copy and paste the ReadMe.LLM contents into the LLM
-                                chat window and ask their query. The LLM now having better context about the library—can select
-                                appropriate functions to correctly implement users' design.</li>
-                        </ul>
-                                
-
-            </div>
-
-
-            <h2>Bridging the LLM Knowledge Gap</h2>
-            <!-- <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center"> -->
-
             <!-- New Case Studies Section -->
             <div class="case-studies">
                 <h3>Real-World Examples: When LLMs Fail</h3>
@@ -160,7 +157,7 @@
 
         <section id="solution">
             <h2>ReadMe.LLM</h2>
-            <!-- <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center">
+            <!-- <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center"> -->
 
             <p>We propose ReadMe.LLM, a structured framework that helps library makers make their tools more accessible
                 to LLMs:</p>
@@ -172,13 +169,14 @@
                 <li>Enhanced Developer Experience: Developers simply copy and paste the ReadMe.LLM contents into the LLM
                     chat window and ask their query. The LLM now having better context about the library—can select
                     appropriate functions to correctly implement users' design.</li>
-            </ul> -->
+            </ul>
             <p>Our approach shifts the focus from fixing LLMs' limitations to empowering libraries to be LLM-friendly,
                 fostering adoption of emerging libraries. The respective workflows for a Library Developer and Engineer are illustrated below:</p>
-            <p><b>Library Developer workflow:</b></p>
-            <img src="assets/images/workflow1.png" alt="User Chart" class="center">
             <p><b>Engineer workflow:</b></p>
             <img src="assets/images/workflow2.png" alt="User Chart" class="center">
+            <p><b>Library Developer workflow:</b></p>
+            <img src="assets/images/workflow1.png" alt="User Chart" class="center">
+            
             <!-- New Case Studies Section -->
             <div class="case-studies">
                 <h3>ReadMe.LLM's Success</h3>

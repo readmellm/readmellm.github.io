@@ -210,6 +210,64 @@ h3 {
     }
 }
 
+.tldr {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* spacing between text and image */
+}
+
+.problem-statement {
+    flex: 1;
+}
+
+
+.problem-statement p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
+.compare-graph {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compare-graph img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0px;
+  }
+
+.tldr {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* spacing between text and image */
+}
+
+.problem-statement {
+    flex: 1;
+}
+
+
+.problem-statement p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
+.compare-graph {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compare-graph img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0px;
+  }
+
 .video-container {
     position: relative;
     width: 100%;
