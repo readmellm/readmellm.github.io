@@ -310,6 +310,35 @@ h3 {
     margin-top: 0px;
   }
 
+.tldr {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* spacing between text and image */
+}
+
+.problem-statement {
+    flex: 1;
+}
+
+
+.problem-statement p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+  
+.compare-graph {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compare-graph img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 0px;
+  }
+
 .video-container {
     position: relative;
     width: 100%;
@@ -322,5 +351,39 @@ h3 {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* #social-showcase {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+.social-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.twitter-feed {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 500px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.twitter-posts {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .social-container {
+        flex-direction: column;
+    }
 }
 
