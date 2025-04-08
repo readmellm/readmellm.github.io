@@ -43,16 +43,14 @@
             <div class="tldr">
                 <div class="problem-statement">
                     <p>
-                        <!-- <b>Problem:</b> LLMs often struggle with newer or lesser-known libraries due to limited online 
-                    documentation or lack of respresentation in their training data.  -->
-                        <b>Problem: </b> Coding LLMs often struggle with newer or lesser-known libraries due to limited
+                        <b>Problem: </b> Nowadays, LLMs are becoming more and more widely used to write code. 
+                        However, coding LLMs struggle with newer or lesser-known libraries due to limited
                         online documentation and/or lack of representation in their training data.
-
                     </p>
                     <p>
                         <b>Solution:</b> We need LLM oriented documentation. ReadMe.LLM is a solution that addresses
-                        this issue by providing structured descritpioins
-                        of the codebase and other metadata. Library developers provide ReadMe.LLM and engineers
+                        this issue by providing structured descriptions
+                        of the codebase and other metadata. Library developers provide ReadMe.LLM and engineers can 
                         use them by simply copy pasting its contents into their chat window along with their query.
                     </p>
                 </div>
@@ -63,28 +61,19 @@
         </section>
 
         <section>
-
             <h2>Bridging the LLM Knowledge Gap</h2>
-            <!-- <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center"> -->
             <h3>The Challenge</h3>
-            <!-- <img src="assets/images/problem.png" alt="ReadMe LLM framework" class="center"> -->
-            <!-- <p>Many developers use LLMs to generate code with existing software libraries, leveraging these tools to
-                    speed up development or simplify onboarding.
-                    However, not all libraries are equally represented in LLM training data. Newer or smaller libraries
-                    often lack online documentation, making it difficult for LLMs to generate accurate code leading to
-                    often misused or misrepresented in AI-generated code.
-                    In contrast, well-established libraries like Pandas have extensive resources that help models
-                    produce reliable output.</p> -->
-            <p>Developers use LLMs to generate code, and for many reasons, good code uses libraries. Not every library
-                is like Pandas which has a lot of documentation, questions on Stack Overflow, and other resources.
+            <p>In the foreseen future, developers will use LLMs to generate most of the code, and even the developer itself will be an agent.
+                To achieve better efficiency and reusability, libraries are always vital for high quality code. However, not every library
+                is as popular as Pandas which has plenty of public documentation, Stack Overflow questions, and other resources that can be easily captured by LLMs.
                 Newer or smaller libraries that target a niche domain often lack online documentation, making it
                 difficult for LLMs to generate accurate code.</p>
             <!-- New Case Studies Section -->
             <div class="case-studies">
                 <h3>Real-World Examples: When LLMs Fail</h3>
 
-                <p>This is not a theoretical concern. We initially conducted experiments without any context across
-                    multiple LLMs:</p>
+                <p>This is not just a theoretical concern. We have conducted experiments without any context across
+                    multiple LLMs. The LLMs and libraries we tested, as well as the experiments progress, is introduced as below.</p>
 
                 <table class="llm-table">
                     <thead>
@@ -122,7 +111,7 @@
                     </tbody>
                 </table>
 
-                We test two distinct libraries:
+                We conducted experiments on two distinct libraries:
                 <ul>
                     <li>
                         <a href="https://supervision.roboflow.com/latest/" target="_blank" rel="noopener noreferrer">
@@ -147,11 +136,10 @@
                     <h4>Case Study 1: Supervision</h4>
                     <div class="case-details">
                         <div class="case-description">
-                            <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars
-                                in an image. We selected an image with multiple objects (such as people, or buildings)
-                                to introduce complexity, and the LLM-generated code had to identify all of the cars in
-                                the image, add a confidence score annotation, save the bounding box coordinates, and
-                                crop each detected car. </p>
+                            <p><strong>Task:</strong> LLMs is supposed to generate code that detect and annotate cars
+                                in the image. An image with multiple objects (like people, buildings) is selected
+                                to introduce complexity. The LLM-generated code should identify all cars in
+                                the image, add a confidence score annotation, and crop each detected car. </p>
                         </div>
                         <div class="case-outcome">
                             <p><strong>Key Results:</strong> When attempting this task with no additional context, we
@@ -169,10 +157,10 @@
                     <h4>Case Study 2: DigitalRF</h4>
                     <div class="case-details">
                         <div class="case-description">
-                            <p><strong>Task:</strong> An example of a common task is a format translation task. For
-                                DigitalRF, we tasked the LLMs with writing a WAV file into a DigitalRF specified HDF5
-                                format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using
-                                the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format.
+                            <p><strong>Task:</strong> Format translation is a common issue to tackle with. Therefore, we 
+                                designed a task for LLMs to write a WAV file into a DigitalRF specified HDF5 format using 
+                                the DigitalRF library. Specifically, we obtained a WAV file (a 10-second long radio signal) 
+                                containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format.
                             </p>
                         </div>
                         <div class="case-outcome">
