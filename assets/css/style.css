@@ -390,4 +390,142 @@ h3 {
     color: #2b6cb0;
     text-decoration: underline;
   }
-  
+
+/* Twitter Feed Container */
+.twitter-feed {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.twitter-feed h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1da1f2;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Horizontal Scrolling Container */
+.twitter-posts-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.twitter-posts-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.twitter-posts-container::-webkit-scrollbar {
+    display: none;
+}
+
+.twitter-posts {
+    display: inline-flex;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+/* Tweet Card Styling */
+.twitter-posts .twitter-tweet {
+    scroll-snap-align: center;
+    display: inline-block;
+    width: 500px !important; /* Fixed width for each tweet */
+    max-width: 500px !important;
+    min-width: 300px !important;
+    margin: 0 !important;
+    white-space: normal;
+    vertical-align: top;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.twitter-posts .twitter-tweet:hover {
+    transform: translateY(-5px);
+}
+
+/* Navigation Arrows */
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(29, 161, 242, 0.8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+    user-select: none;
+}
+
+.scroll-arrow:hover {
+    background-color: rgba(29, 161, 242, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+    left: -20px;
+}
+
+.right-arrow {
+    right: -20px;
+}
+
+/* Scroll Dots */
+.scroll-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dot.active {
+    background-color: #1da1f2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .twitter-posts .twitter-tweet {
+        width: 90vw !important;
+        min-width: 280px !important;
+    }
+    
+    .scroll-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+

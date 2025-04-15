@@ -23,11 +23,11 @@
             <ul class="nav-menu">
                 <li><a href="#solution">ReadMe.LLM</a></li>
                 <li><a
-                        href="https://docs.google.com/document/d/14gC1LOyP63WjCu_2aQLGns0_pIveCl24LfAfc8tymPA/edit?tab=t.0#heading=h.81n4a8x05dl1">Pre-print</a>
+                        href="https://arxiv.org/abs/2504.09798">Pre-print</a>
                 </li>
                 <li><a href="#demo-video">Demo Video</a></li>
                 <li><a href="#workflow">Try it Out!</a></li>
-                <li><a href="#social-showcase">Showcase</a></li>
+                <li><a href="#social-showcase">Community Voices</a></li>
                 <li><a href="#team">Team</a></li>
                 <!--                 <li><a href="#library">Library Maker</a></li>
                 <li><a href="#developer">Developer</a></li> -->
@@ -120,6 +120,7 @@
                         a computer vision library that is widely used, but is also very recently developed, possibly
                         causing it to be not included in a LLM's training data.
                     </li>
+                    
                     <li>
                         <a href="https://github.com/MITHaystack/digital_rf" target="_blank" rel="noopener noreferrer">
                             DigitalRF
@@ -136,10 +137,10 @@
                     <h4>Case Study 1: Supervision</h4>
                     <div class="case-details">
                         <div class="case-description">
-                            <p><strong>Task:</strong> LLMs is supposed to generate code that detect and annotate cars
-                                in the image. An image with multiple objects (like people, buildings) is selected
-                                to introduce complexity. The LLM-generated code should identify all cars in
-                                the image, add a confidence score annotation, and crop each detected car. </p>
+                            <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. 
+                                We selected an image with multiple objects (such as people, or buildings) to introduce complexity and 
+                                the LLM-generated code had to identify all cars, add a confidence score annotation, 
+                                save the bounding box coordinates, and crop each detected car. </p>
                         </div>
                         <div class="case-outcome">
                             <p><strong>Key Results:</strong> When attempting this task with no additional context, we
@@ -150,6 +151,8 @@
                                 class="center">
 
                         </div>
+                        <p>NOTE: Web search is only practical if the website is open and publicly usable. This does not apply to internal libraries.</p>
+
                     </div>
                 </div>
 
@@ -225,16 +228,15 @@
             <h2>ReadMe.LLM</h2>
             <!-- <img src="assets/images/solution.png" alt="ReadMe LLM framework" class="center"> -->
 
-            <p>We propose ReadMe.LLM, a structured framework that helps library makers make their tools more accessible
-                to LLMs:</p>
+            <p>We propose ReadMe.LLM, LLM-oriented documentation to streamline library usage by LLMs:</p>
             <ul>
                 <li>Optimized Documentation for LLMs: ReadMe.LLM provides structured descriptions of the codebase and
                     other metadata.</li>
                 <li>Seamless Integration: Library developers attach ReadMe.LLM to their codebase, allowing LLMs to
                     accurately utilize the library without requiring additional fine-tuning.</li>
                 <li>Enhanced Developer Experience: Developers simply copy and paste the ReadMe.LLM contents into the LLM
-                    chat window and ask their query. The LLM now having better context about the library—can select
-                    appropriate functions to correctly implement users' design.</li>
+                    chat window and ask their query. The LLM now having better context about the library can select
+                    appropriate functions to correctly implement users' design, even without requiring new IDEs or infrastructure.</li>
             </ul>
             <p>Our approach shifts the focus from fixing LLMs' limitations to empowering libraries to be LLM-friendly,
                 fostering adoption of emerging libraries. The respective workflows for a Library Developer and Engineer
@@ -257,9 +259,12 @@
                             <!-- <p><strong>Task:</strong> For Supervision, we tasked LLMs with detecting and annotating cars in an image. We selected an image with multiple objects (such as people, or buildings) to introduce complexity and test the LLMs' ability to differentiate between relevant and irrelevant detections. The LLM had to identify all cars, add a confidence score annotation, save the bounding box coordinates, and crop each detected car. </p> -->
                         </div>
                         <div class="case-outcome">
-                            <p><strong>Key Results:</strong> We created an optimal ReadME.LLM for Supervision, and as
-                                can be seen in the graph below, we were able to reach 100% success rate across all 5
-                                models for this task.</p>
+                            <p><strong>Key Results:</strong> We created an optimal ReadME.LLM for Supervision by 
+                                first testing until we reached a 100% success rate with Sonar with search enabled. The structure
+                                of this final ReadMe.LLM included examples, function signatures, and context descriptions.
+                                Then we tested this across all 5 models and as can be seen in the graph below
+                                we were able to reach 100% success rate across all 5 models.
+                            </p>
                             <img src="assets/images/Success_Supervision.png" alt="ReadMe LLM framework" class="center">
                         </div>
                     </div>
@@ -272,9 +277,11 @@
                             <!-- <p><strong>Task:</strong> For DigitalRF, we tasked the LLMs with writing a WAV file into HDF5 format. We obtained a WAV file (a 10-second long radio signal) containing I/Q data using the SDR++ application and tasked LLMs with converting it to a standardized HDF5 format. </p> -->
                         </div>
                         <div class="case-outcome">
-                            <p><strong>Key Results:</strong> After experimenting with several different types of
-                                ReadMe.LLM's we observed that each model had a ReadMe.LLM that resulted in a 100%
-                                success rate.</p>
+                            <p><strong>Key Results:</strong> We used a similar structure as the final ReadME.LLM for Supervision,
+                                and created a text file with examples and function signatures of the major read and write functions in the library.
+                                We also included a few context descriptions. In our testing we observed that the final ReadME.LLM with search achieved a 100%
+                                succss rate with all the models excpet for GPT-4o which had an 80% success rate. This shows that there is still room to iterate
+                            and improve upon the current structure of our ReadME.LLM for DigitalRF.</p>
                             <img src="assets/images/Success_DigitalRF.png" alt="ReadMe LLM framework" class="center">
                         </div>
                     </div>
@@ -334,45 +341,342 @@
 
         </section>
 
+
         <section id="social-showcase">
-            <h2>Showcase</h2>
+            <h2>Community Voices</h2>
             <div class="social-container">
                 <div class="twitter-feed">
-                    <h3>Discussion on X</h3>
-                    <div class="twitter-posts">
-                        <blockquote class="twitter-tweet">
-                            <p lang="en" dir="ltr">It&#39;s 2025 and most content is still written for humans instead of
-                                LLMs. 99.9% of attention is about to be LLM attention, not human attention.<br><br>E.g.
-                                99% of libraries still have docs that basically render to some pretty .html static pages
-                                assuming a human will click through them.…</p>&mdash; Andrej Karpathy (@karpathy) <a
-                                href="https://twitter.com/karpathy/status/1899876370492383450?ref_src=twsrc%5Etfw">March
-                                12, 2025</a>
-                        </blockquote>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        <blockquote class="twitter-tweet">
-                            <p lang="en" dir="ltr">Good tip from Replit’s <a
-                                    href="https://twitter.com/mattppal?ref_src=twsrc%5Etfw">@mattppal</a> at AI Dev 25
-                                on debugging while vibe coding: Large part of it is looking at outputs to figure out
-                                what context you have that LLM does not, so that you can give it that context and help
-                                it get unstuck. Sometimes pasting in the error messages is… <a
-                                    href="https://t.co/4HSLeoviLp">pic.twitter.com/4HSLeoviLp</a></p>&mdash; Andrew Ng
-                            (@AndrewYNg) <a
-                                href="https://twitter.com/AndrewYNg/status/1900617330906067136?ref_src=twsrc%5Etfw">March
-                                14, 2025</a>
-                        </blockquote>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    </div>
-                </div>
-                <!-- <div class="linkedin-feed">
-                    <h3>LinkedIn Updates</h3>
-                    <div class="linkedin-posts">
-                        <div class="linkedin-badge">
-                            <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7289056858122682368" target="_blank">View LinkedIn Post</a>
+                    <div class="twitter-posts-wrapper">
+                        <div class="scroll-arrow left-arrow">&#10094;</div>
+                        <div class="twitter-posts-container">
+                            <div class="twitter-posts">
+                                <blockquote class="twitter-tweet">
+                                    <p lang="en" dir="ltr">It&#39;s 2025 and most content is still written for humans instead of
+                                        LLMs. 99.9% of attention is about to be LLM attention, not human attention.<br><br>E.g.
+                                        99% of libraries still have docs that basically render to some pretty .html static pages
+                                        assuming a human will click through them.…</p>&mdash; Andrej Karpathy (@karpathy) <a
+                                        href="https://twitter.com/karpathy/status/1899876370492383450?ref_src=twsrc%5Etfw">March
+                                        12, 2025</a>
+                                </blockquote>
+                                <blockquote class="twitter-tweet">
+                                    <p lang="en" dir="ltr">Good tip from Replit's <a
+                                            href="https://twitter.com/mattppal?ref_src=twsrc%5Etfw">@mattppal</a> at AI Dev 25
+                                        on debugging while vibe coding: Large part of it is looking at outputs to figure out
+                                        what context you have that LLM does not, so that you can give it that context and help
+                                        it get unstuck. Sometimes pasting in the error messages is… <a
+                                            href="https://t.co/4HSLeoviLp">pic.twitter.com/4HSLeoviLp</a></p>&mdash; Andrew Ng
+                                    (@AndrewYNg) <a
+                                        href="https://twitter.com/AndrewYNg/status/1900617330906067136?ref_src=twsrc%5Etfw">March
+                                        14, 2025</a>
+                                </blockquote>
+                                <blockquote class="twitter-tweet"><p lang="en" dir="ltr">One of the biggest mindset shifts I've had 
+                                    building AI products:<br><br>When working with LLMs, let go of deterministic thinking 
+                                    (&quot;X input = Y output&quot;).<br><br>It's not about writing code — it's about shaping behavior 
+                                    through context.<br><br>Guide, iterate, adapt.<br><br>Directions, not destinations.…</p>&mdash; 
+                                    Guille / Building Zapia AI (@guillepenaa) 
+                                    <a href="https://twitter.com/guillepenaa/status/1910414013088874994?ref_src=twsrc%5Etfw">April 10, 2025</a>
+                                </blockquote>
+                            </div>
                         </div>
+                        <div class="scroll-arrow right-arrow">&#10095;</div>
                     </div>
-                </div> -->
+                    <div class="scroll-dots"></div>
+                </div>
             </div>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Wait for Twitter widgets to load
+                    if (typeof twttr !== 'undefined') {
+                        twttr.ready(function() {
+                            twttr.events.bind('rendered', initializeScrolling);
+                        });
+                    } else {
+                        // Fallback if Twitter widgets don't load properly
+                        window.addEventListener('load', function() {
+                            setTimeout(initializeScrolling, 1000);
+                        });
+                    }
+                    
+                    function initializeScrolling() {
+                        const container = document.querySelector('.twitter-posts-container');
+                        const tweetsWrapper = document.querySelector('.twitter-posts');
+                        const tweets = document.querySelectorAll('.twitter-tweet');
+                        const leftArrow = document.querySelector('.left-arrow');
+                        const rightArrow = document.querySelector('.right-arrow');
+                        const dotsContainer = document.querySelector('.scroll-dots');
+                        
+                        // Clear any existing dots
+                        dotsContainer.innerHTML = '';
+                        
+                        // Create navigation dots
+                        tweets.forEach((_, index) => {
+                            const dot = document.createElement('div');
+                            dot.className = 'dot';
+                            if (index === 0) dot.classList.add('active');
+                            dot.addEventListener('click', () => scrollToTweet(index));
+                            dotsContainer.appendChild(dot);
+                        });
+                        
+                        const dots = document.querySelectorAll('.dot');
+                        let currentIndex = 0;
+                        
+                        // Scroll to specific tweet by index
+                        function scrollToTweet(index) {
+                            if (tweets[index]) {
+                                currentIndex = index;
+                                const tweetOffset = tweets[index].offsetLeft - tweetsWrapper.offsetLeft;
+                                container.scrollTo({
+                                    left: tweetOffset,
+                                    behavior: 'smooth'
+                                });
+                                updateActiveDot();
+                            }
+                        }
+                        
+                        // Update active dot based on current index
+                        function updateActiveDot() {
+                            dots.forEach((dot, i) => {
+                                dot.classList.toggle('active', i === currentIndex);
+                            });
+                        }
+                        
+                        // Arrow navigation - fixed to properly handle the third tweet
+                        leftArrow.addEventListener('click', () => {
+                            if (currentIndex > 0) {
+                                scrollToTweet(currentIndex - 1);
+                            }
+                        });
+                        
+                        rightArrow.addEventListener('click', () => {
+                            if (currentIndex < tweets.length - 1) {
+                                scrollToTweet(currentIndex + 1);
+                            }
+                        });
+                        
+                        // Update active dot on scroll
+                        container.addEventListener('scroll', () => {
+                            const scrollPosition = container.scrollLeft;
+                            
+                            // Find which tweet is most visible
+                            let closestTweet = 0;
+                            let minDistance = Infinity;
+                            
+                            tweets.forEach((tweet, index) => {
+                                const tweetOffset = tweet.offsetLeft - tweetsWrapper.offsetLeft;
+                                const distance = Math.abs(scrollPosition - tweetOffset);
+                                
+                                if (distance < minDistance) {
+                                    minDistance = distance;
+                                    closestTweet = index;
+                                }
+                            });
+                            
+                            if (currentIndex !== closestTweet) {
+                                currentIndex = closestTweet;
+                                updateActiveDot();
+                            }
+                        });
+                        
+                        // Hide arrows if no overflow
+                        function checkOverflow() {
+                            const isOverflowing = container.scrollWidth > container.clientWidth;
+                            leftArrow.style.display = isOverflowing ? 'flex' : 'none';
+                            rightArrow.style.display = isOverflowing ? 'flex' : 'none';
+                            dotsContainer.style.display = isOverflowing && tweets.length > 1 ? 'flex' : 'none';
+                        }
+                        
+                        // Check overflow initially and on window resize
+                        checkOverflow();
+                        window.addEventListener('resize', checkOverflow);
+                        
+                        // Add keyboard navigation
+                        document.addEventListener('keydown', function(e) {
+                            if (e.key === 'ArrowLeft') {
+                                if (currentIndex > 0) {
+                                    scrollToTweet(currentIndex - 1);
+                                }
+                            } else if (e.key === 'ArrowRight') {
+                                if (currentIndex < tweets.length - 1) {
+                                    scrollToTweet(currentIndex + 1);
+                                }
+                            }
+                        });
+                        
+                        // Add touch swipe support
+                        let touchStartX = 0;
+                        let touchEndX = 0;
+                        
+                        container.addEventListener('touchstart', e => {
+                            touchStartX = e.changedTouches[0].screenX;
+                        });
+                        
+                        container.addEventListener('touchend', e => {
+                            touchEndX = e.changedTouches[0].screenX;
+                            handleSwipe();
+                        });
+                        
+                        function handleSwipe() {
+                            const swipeThreshold = 50;
+                            if (touchStartX - touchEndX > swipeThreshold) {
+                                // Swipe left - go to next tweet
+                                if (currentIndex < tweets.length - 1) {
+                                    scrollToTweet(currentIndex + 1);
+                                }
+                            } else if (touchEndX - touchStartX > swipeThreshold) {
+                                // Swipe right - go to previous tweet
+                                if (currentIndex > 0) {
+                                    scrollToTweet(currentIndex - 1);
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+            <style>
+                /* Twitter Feed Container */
+                .twitter-feed {
+                    background-color: #f8f9fa;
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                    max-width: 90%;
+                    margin: 0 auto;
+                    position: relative;
+                }
+        
+                .twitter-feed h3 {
+                    margin-top: 0;
+                    margin-bottom: 1.5rem;
+                    color: #1da1f2;
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+        
+                /* Horizontal Scrolling Container */
+                .twitter-posts-wrapper {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                }
+        
+                .twitter-posts-container {
+                    width: 100%;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    white-space: nowrap;
+                    scroll-behavior: smooth;
+                    scrollbar-width: none; /* Firefox */
+                    -ms-overflow-style: none; /* IE and Edge */
+                    scroll-snap-type: x mandatory;
+                    padding: 1rem 0;
+                }
+        
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .twitter-posts-container::-webkit-scrollbar {
+                    display: none;
+                }
+        
+                .twitter-posts {
+                    display: inline-flex;
+                    gap: 1.5rem;
+                    padding: 0 0.5rem;
+                }
+        
+                /* Tweet Card Styling */
+                .twitter-posts .twitter-tweet {
+                    scroll-snap-align: center;
+                    display: inline-block;
+                    width: 500px !important; /* Fixed width for each tweet */
+                    max-width: 500px !important;
+                    min-width: 300px !important;
+                    margin: 0 !important;
+                    white-space: normal;
+                    vertical-align: top;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+                }
+        
+                .twitter-posts .twitter-tweet:hover {
+                    transform: translateY(-5px);
+                }
+        
+                /* Navigation Arrows */
+                .scroll-arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 40px;
+                    height: 40px;
+                    background-color: rgba(29, 161, 242, 0.8);
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    z-index: 10;
+                    transition: background-color 0.2s, transform 0.2s;
+                    user-select: none;
+                }
+        
+                .scroll-arrow:hover {
+                    background-color: rgba(29, 161, 242, 1);
+                    transform: translateY(-50%) scale(1.1);
+                }
+        
+                .left-arrow {
+                    left: -20px;
+                }
+        
+                .right-arrow {
+                    right: -20px;
+                }
+        
+                /* Scroll Dots */
+                .scroll-dots {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8px;
+                    margin-top: 1rem;
+                }
+        
+                .dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #ccc;
+                    cursor: pointer;
+                    transition: background-color 0.2s;
+                }
+        
+                .dot.active {
+                    background-color: #1da1f2;
+                }
+        
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .twitter-posts .twitter-tweet {
+                        width: 90vw !important;
+                        min-width: 280px !important;
+                    }
+                    
+                    .scroll-arrow {
+                        width: 30px;
+                        height: 30px;
+                        font-size: 1rem;
+                    }
+                }
+            </style>
         </section>
+        
+        
+        
+
 
 
         <!-- Team Section -->
@@ -490,77 +794,31 @@
 
         <section id="citation">
             <h2>Cite</h2>
-            <div class="content-box visual" style="margin-top: 2rem; max-width: 100%">
-                <div class="text-swatch" style="width:50rem; max-width: 100%;">
-                    <p>
-                        If you rely on ReadMe.LLM and artifacts, we request that you cite to the underlying paper.
+            <div class="content-box visual" style="margin-top: 2rem; max-width: 100%; padding: 1.5rem; border-radius: 8px; background-color: #f8f9fa; border: 1px solid #e9ecef;">
+                <div class="citation-container">
+                    <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.5;">
+                        If you rely on ReadMe.LLM and artifacts, we request that you cite the underlying paper:
                     </p>
-                    <!-- <div class="citation">
-
-                        <div class="bibtex-field">
-                            @misc{zhang2024cybenchframeworkevaluatingcybersecurity,
-                        </div>
-                        <div class="bibtex-entry">
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">title</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{Cybench: A Framework for Evaluating Cybersecurity
-                                    Capabilities and Risks of Language Models},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">author</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{Andy K. Zhang and Neil Perry and Riya Dulepet and Joey Ji
-                                    and Celeste Menders and Justin W. Lin and Eliot Jones and Gashon Hussein and
-                                    Samantha Liu and Donovan Jasper and Pura Peetathawatchai and Ari Glenn and Vikram
-                                    Sivashankar and Daniel Zamoshchin and Leo Glikbarg and Derek Askaryar and Mike Yang
-                                    and Teddy Zhang and Rishi Alluri and Nathan Tran and Rinnara Sangpisit and
-                                    Polycarpos Yiorkadjis and Kenny Osele and Gautham Raghupathi and Dan Boneh and
-                                    Daniel E. Ho and Percy Liang},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">year</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{2024},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">eprint</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{2408.08926},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">archivePrefix</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{arXiv},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">primaryClass</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{cs.CR},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">url</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value">{https://arxiv.org/abs/2408.08926},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-label">note</span>
-                                <span class="bibtex-equals">=</span>
-                                <span class="bibtex-value" id="bibtex-time">{Accessed: 2025-03-18},</span>
-                            </div>
-                            <div class="bibtex-field">
-                                <span class="bibtex-end">}</span>
-                            </div>
-                        </div>
-
-                    </div> -->
+                    <pre style="background-color: #f1f3f5; padding: 1rem; border-radius: 6px; overflow-x: auto; font-family: monospace; font-size: 0.9rem; line-height: 1.4; border-left: 4px solid #6c757d;">@misc{wijaya2025readmellmframeworkhelpllms,
+            title={ReadMe.LLM: A Framework to Help LLMs Understand Your Library}, 
+            author={Sandya Wijaya and Jacob Bolano and Alejandro Gomez Soteres and Shriyanshu Kode and Yue Huang and Anant Sahai},
+            year={2025},
+            eprint={2504.09798},
+            archivePrefix={arXiv},
+            primaryClass={cs.SE},
+            url={https://arxiv.org/abs/2504.09798}, 
+        }</pre>
+                    <div style="margin-top: 1rem; text-align: right;">
+                        <a href="https://arxiv.org/abs/2504.09798" style="text-decoration: none; color: #0366d6; font-weight: 500;">View on arXiv →</a>
+                    </div>
                 </div>
             </div>
         </section>
+        
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>readmellm.ucb@gmail.com</p>
+            <p>Please send any questions or inquiries to readmellm.ucb@gmail.com</p>
         </section>
 
     </main>
